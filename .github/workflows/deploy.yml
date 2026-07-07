@@ -1,0 +1,16 @@
+name: Deploy Automático (Cloudflare & Render)
+
+on:
+  push:
+    branches:
+      - main # Dispara o robô toda vez que você atualizar a branch principal
+
+jobs:
+  notificar_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do Código
+        uses: actions/checkout@v4
+
+      - name: Aviso de Sincronização
+        run: echo "O código foi atualizado no GitHub! Iniciando atualização na Cloudflare e Render..."
